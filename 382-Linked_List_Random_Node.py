@@ -1,14 +1,13 @@
 """
-* Ref:
-* Key points:
+* Ref: No
+* Key points: No
 * Explain your thought:
+  - Get the length of linkedList
+  - Get the index randomly in the range from 0 to length-1
+  - Get the node corresponding to the index and return its value
 * Compute complexity:
   - Time complexity: O(n)
   - Space complexity: O(n)
-* Function inputs:
-  - type input: str, ex:
-* Function outputs:
-  - rtype: int, ex:
 """
 
 
