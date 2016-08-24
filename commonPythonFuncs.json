@@ -14,4 +14,14 @@
       "time_complexity": "",
       "space_complexity": "",
     },
+  "random.randint":
+    {
+      "time_complexity": "",
+      "space_complexity": "",
+    },
+  "random.randrange":
+    {
+      "time_complexity": "",
+      "space_complexity": "",
+    },
 }
