@@ -1,5 +1,17 @@
 {
-  "str.splitlines": [388],
-  "str.lstrip": [388],
-  "max": [388],
+  "str.splitlines": 
+    {
+      "time_complexity": "",
+      "space_complexity": "",
+    },
+  "str.lstrip":
+    {
+      "time_complexity": "",
+      "space_complexity": "",
+    },
+  "max":
+    {
+      "time_complexity": "",
+      "space_complexity": "",
+    },
 }
