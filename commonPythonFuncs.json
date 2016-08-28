@@ -1,27 +1,49 @@
 {
-  "str.splitlines": 
-    {
-      "time_complexity": "",
-      "space_complexity": "",
-    },
-  "str.lstrip":
-    {
-      "time_complexity": "",
-      "space_complexity": "",
-    },
-  "max":
-    {
-      "time_complexity": "",
-      "space_complexity": "",
-    },
-  "random.randint":
-    {
-      "time_complexity": "",
-      "space_complexity": "",
-    },
-  "random.randrange":
-    {
-      "time_complexity": "",
-      "space_complexity": "",
-    },
+  "char": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "ord": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "str.splitlines": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "str.lstrip": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "max": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "random.randint": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "random.randrange": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "heqpq": {
+    "note": "an implement of priority queue"
+  },
+  "heapq.merge": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "itertools": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "zip": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "bisect.bisect_left": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
 }
