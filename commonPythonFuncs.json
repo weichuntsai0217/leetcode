@@ -15,6 +15,14 @@
     "time_complexity": "",
     "space_complexity": "",
   },
+  "str.lower": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "str.upper": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
   "max": {
     "time_complexity": "",
     "space_complexity": "",
@@ -42,8 +50,17 @@
     "time_complexity": "",
     "space_complexity": "",
   },
+  "bisect": {
+    "note": ""
+  },
   "bisect.bisect_left": {
     "time_complexity": "",
     "space_complexity": "",
   },
+  "collections.deque": {
+    "note": ""
+  },
+  "collections.Counter": {
+    "note": ""
+  }
 }
