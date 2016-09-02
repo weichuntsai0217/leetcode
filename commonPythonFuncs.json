@@ -42,6 +42,15 @@
     "time_complexity": "",
     "space_complexity": "",
   },
+  "heapq.heapreplace": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "heapq.heappush": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "heapq.heappop"
   "itertools": {
     "time_complexity": "",
     "space_complexity": "",
