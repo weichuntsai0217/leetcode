@@ -6,7 +6,7 @@
     in my publications, there are at least h paper with citations >= h.
     And the biggest h is the answer.
 * Compute complexity:
-  - Time complexity: O(n) for encode, O(n) for decode
+  - Time complexity: O(n)
   - Space complexity: O(n)
 """
 class Solution(object):
