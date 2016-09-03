@@ -23,7 +23,19 @@
     "time_complexity": "",
     "space_complexity": "",
   },
+  "str.find": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
   "max": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "min": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "abs": {
     "time_complexity": "",
     "space_complexity": "",
   },
