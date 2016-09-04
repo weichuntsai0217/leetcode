@@ -78,10 +78,34 @@
     "time_complexity": "",
     "space_complexity": "",
   },
+  "bisect.insort": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
   "collections.deque": {
     "note": ""
   },
   "collections.Counter": {
     "note": ""
-  }
+  },
+  "iter": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "iter.next": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "next": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "re.findall": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "any": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
 }
