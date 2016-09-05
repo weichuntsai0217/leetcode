@@ -48,7 +48,7 @@
     "space_complexity": "",
   },
   "heqpq": {
-    "note": "an implement of priority queue"
+    "note": "This module provides an implementation of the heap queue algorithm, also known as the priority queue algorithm."
   },
   "heapq.merge": {
     "time_complexity": "",
