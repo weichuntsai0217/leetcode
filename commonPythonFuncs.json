@@ -1,4 +1,12 @@
 {
+  "list.sort": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "sorted": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
   "char": {
     "time_complexity": "",
     "space_complexity": "",
