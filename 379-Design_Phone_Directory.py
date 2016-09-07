@@ -21,7 +21,7 @@ class PhoneDirectory(object):
         @param maxNumbers - The maximum numbers that can be stored in the phone directory.
         :type maxNumbers: int
         """
-        self.nums = [num for num in xrange(maxNumbers)]
+        self.nums = range(maxNumbers)
 
     def get(self):
         """
@@ -29,8 +29,8 @@ class PhoneDirectory(object):
         @return - Return an available number. Return -1 if none is available.
         :rtype: int
         """
-        if len(self.nums) == 0: return -1
-        return self.nums.pop(0)
+        if not len(self.nums): return -1
+        return self.nums.pop()        
 
     def check(self, number):
         """
@@ -39,7 +39,6 @@ class PhoneDirectory(object):
         :rtype: bool
         """
         return number in self.nums
-        
 
     def release(self, number):
         """
@@ -50,7 +49,6 @@ class PhoneDirectory(object):
         if number not in self.nums:
             self.nums.append(number)
         
-
 
 # Your PhoneDirectory object will be instantiated and called as such:
 # obj = PhoneDirectory(maxNumbers)

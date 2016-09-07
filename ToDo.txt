@@ -1,0 +1,35 @@
+arrays         ---> done
+linked lists   ---> done
+stacks         ---> done
+queues         ---> done
+hash-sets      ---> TBD
+hash-maps      ---> TBD
+hash-tables    ---> TBD
+dictionary     ---> TBD
+binary search trees ---> done
+heap
+heap queue (priority queue)
+graphs
+
+insertion sort ---> done
+selection sort ---> done
+radix sort     ---> TBD
+BubbleSort     ---> done
+QuickSort      ---> done
+MergeSort      ---> done
+HeapSort
+
+====================
+394
+389
+388
+382
+380
+379
+378
+377
+374
+373
+370
+369
+368
