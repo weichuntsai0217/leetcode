@@ -20,8 +20,9 @@ class Solution(object):
         :rtype: void Do not return anything, modify nums in-place instead.
         """
         nums.sort()
-        half = len(nums)/2 if len(nums)%2 else len(nums)/2-1
-        smallers = sorted(nums[:half+1], reverse=True)
-        largers = sorted(nums[half+1:], reverse=True)
-        nums[::2] = smallers
-        nums[1::2] = largers
+        length = len(nums)
+        half = length/2+1 if length%2 else length/2
+        smaller = sorted(nums[:half], reverse=True)
+        larger = sorted(nums[half:], reverse=True)
+        nums[::2] = smaller
+        nums[1::2] = larger

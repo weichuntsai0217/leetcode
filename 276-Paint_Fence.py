@@ -12,7 +12,7 @@
     For choice 1, it's aparently f(4)*(k-1).
     For choice 2, it's f(3)*(k-1), because in choice 2, the 4th and
     the 5th poles are the same color, and this combination equals that
-    we pait the 4th pole with color different the 3rd pole.
+    we paint the 4th pole with color different the 3rd pole.
   - If ways[i] is the number of ways to paint i posts, then:
     ways[0] = 0 (I think it should be 1, but whatever...)
     ways[1] = k

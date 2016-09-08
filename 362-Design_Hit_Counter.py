@@ -6,17 +6,13 @@
   - Time complexity:
   - Space complexity: O(n)
 """
-
 class HitCounter(object):
+
     def __init__(self):
         """
         Initialize your data structure here.
         """
-        from collections import deque
-        
-        self.num_of_hits = 0 # record the total hits
-        self.time_hits = deque()  # record the hits sequence
-        
+        self.hits = []
 
     def hit(self, timestamp):
         """
@@ -25,17 +21,10 @@ class HitCounter(object):
         :type timestamp: int
         :rtype: void
         """
-        if not self.time_hits or self.time_hits[-1][0] != timestamp:
-            # for the hit which is the first hit in the current timestamp
-            self.time_hits.append([timestamp, 1])
+        if not len(self.hits) or timestamp != self.hits[-1][0]:
+            self.hits.append([timestamp, 1])
         else:
-            # for the hit which is not the first hit in the current timestamp
-            self.time_hits[-1][1] += 1
-        
-        # Add this hit to the total hits
-        self.num_of_hits += 1
-                
-        
+            self.hits[-1][1] += 1
 
     def getHits(self, timestamp):
         """
@@ -44,12 +33,11 @@ class HitCounter(object):
         :type timestamp: int
         :rtype: int
         """
-        while self.time_hits and self.time_hits[0][0] <= timestamp - 300:
-            # If the timestamp is less than the current timestamp -300, remove
-            self.num_of_hits -= self.time_hits.popleft()[1]
-
-        # We always leave the number of hits in the latest 5 mins
-        return self.num_of_hits 
+        sum = 0
+        for i in xrange(len(self.hits)-1, -1, -1):
+            if self.hits[i][0] + 300 <= timestamp: break
+            sum += self.hits[i][1]
+        return sum
 
 
 # Your HitCounter object will be instantiated and called as such:

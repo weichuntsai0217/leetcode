@@ -11,7 +11,7 @@
   - Time complexity: O(nlogn) ?
   - Space complexity: O(n)
 """
-
+import collections
 class TicTacToe(object):
     def __init__(self, n):
         """
@@ -39,10 +39,12 @@ class TicTacToe(object):
         """
         for i, x in enumerate((row, col, row+col, row-col)):
             # 4 cases to check:
-            #   i=0 is for row check
-            #   i=1 is for col check
-            #   i=2 is for diagonal(labeled by row+col) check
-            #   i=3 is for anti-diagonal(labeled by row-col) check
+            #   i=0 is for row check, x=row (0 to n-1)
+            #   i=1 is for col check, x=col (0 to n-1)
+            #   i=2 is for anti-diagonal check, x=row+col,
+            #       only x=n-1 has the chance to win in anti-diagonal
+            #   i=3 is for diagonal check, x=row-col,
+            #       only x=0 has the chance to win in diagonal
             self.count[i, x, player] += 1
             if self.count[i, x, player] == self.n:
                 return player

@@ -21,17 +21,14 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        if n > 10:
-           # digits larger than 10 with all unique is impossible,
-           # we just calculate 10-digit case, so set n=10
-           n = 10
-        
-        if n == 0: # simple case for numbers with 1 digit < 1
-            return 1
-        elif n == 1: # simple case for numbers with 1 digit < 10
-            return 10
-        else: 
+        # digits larger than 10 with all unique is impossible,
+        # we just calculate 10-digit case, so set n=10
+        if n > 10: n = 10
+
+        if n == 0: return 1 # simple case for numbers with 1 digit < 1
+        if n == 1: return 10 # simple case for numbers with 1 digit < 10
+
         # numbers with 2 digits and above, we have to calculate the case
         # when the first digit is not zero and do recursion down to
         # the simple case.
-            return 9 * reduce(lambda x, y : x * y, xrange(11-n, 10)) + self.countNumbersWithUniqueDigits(n - 1)
+        return 9*reduce( lambda x,y: x*y, xrange(11-n, 10)) + self.countNumbersWithUniqueDigits(n-1)
