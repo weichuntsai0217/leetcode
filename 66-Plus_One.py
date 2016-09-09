@@ -13,14 +13,12 @@ class Solution(object):
         :type digits: List[int]
         :rtype: List[int]
         """
-        if len(digits) == 0: return [1]
+        if not digits: return [1]
         i = len(digits)-1
-        while (i>-1):
+        while i > -1:
             digits[i] += 1
-            if digits[i] != 10:
-                return digits
-            else:
-                digits[i] = 0
-                if i == 0: return [1] + digits
-                i -= 1
+            if digits[i] <= 9: return digits
+            digits[i] = 0
+            if i == 0: return [1] + digits
+            i -= 1
         return digits

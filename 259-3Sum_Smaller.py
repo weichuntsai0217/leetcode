@@ -10,7 +10,6 @@
   - Time complexity: O(n^2)
   - Space complexity: O(n)
 """
-
 class Solution(object):
     def threeSumSmaller(self, nums, target):
         """
@@ -18,15 +17,17 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
+        if not len(nums): return 0
+        if len(nums) == 1: return int( nums[0] < target )
+        if len(nums) == 2: return int( sum(nums) < target )
         nums.sort()
-        count = 0
-        for k in xrange(len(nums)):
-            i, j = 0, k - 1
-            while i < j:
+        count, length = 0, len(nums)
+        for k in xrange(2, length):
+            i, j = 0, k-1
+            while (i < j):
                 if nums[i] + nums[j] + nums[k] < target:
-                    count += j - i
+                    count += j-i
                     i += 1
                 else:
                     j -= 1
         return count
-        

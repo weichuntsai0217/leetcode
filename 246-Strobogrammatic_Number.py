@@ -14,19 +14,11 @@ class Solution(object):
         :type num: str
         :rtype: bool
         """
+        mapping = {'0':'0','1':'1','6':'9', '8':'8', '9':'6'}
         centers = '018'
-        mapping = {
-            '0': '0',
-            '1': '1',
-            '6': '9',
-            '8': '8',
-            '9': '6',
-        }
-        i, j = 0, len(num)-1
-        while(i<=j):
-            if num[i] not in mapping: return False
-            if mapping[num[i]] != num[j]: return False
-            if i == j and num[i] not in centers: return False
-            i+=1
-            j-=1
+        length = len(num)
+        mid = length/2
+        if length%2 and num[mid] not in centers: return False
+        for i in xrange(mid):
+            if (num[i] not in mapping) or (mapping[num[i]] != num[length-i-1]): return False
         return True

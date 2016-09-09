@@ -13,14 +13,13 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        s = list(s)
-        stack = list()
-        lefts = list('({[')
-        pairs = {'(':')','{':'}','[':']'}
-        for char in s:
-            if char in lefts:
-                stack.append(char)
-            elif len(stack) and pairs[stack[-1]] == char:
+        lefts = {'(', '[', '{'}
+        pairs = {')': '(', ']':'[', '}':'{'}
+        stack = []
+        for c in s:
+            if c in lefts:
+                stack.append(c)
+            elif len(stack) and pairs[c] == stack[-1]:
                 stack.pop()
             else:
                 return False

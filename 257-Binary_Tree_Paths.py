@@ -20,15 +20,13 @@ class Solution:
     # @param {TreeNode} root
     # @return {string[]}
     def binaryTreePaths(self, root):
+        def recur(node, path, res):
+            path = path + '->' + str(node.val) if path else str(node.val)
+            if node.left: recur(node.left, path, res)
+            if node.right: recur(node.right, path, res)
+            if not node.left and not node.right:
+                res.append(path)
         if not root: return []
         res = []
-        def _setPaths(node, prefix, res):
-            path = (prefix+'->'+ str(node.val)) if prefix else str(node.val)
-            if node.left:
-                _setPaths(node.left, path, res)
-            if node.right:
-                _setPaths(node.right, path, res)
-            if (not node.left) and (not node.right): 
-                res.append(path)
-        _setPaths(root, '', res)
+        recur(root, '', res)
         return res

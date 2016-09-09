@@ -14,8 +14,9 @@ class Solution(object):
         :type target: int
         :rtype: bool
         """
+        if not matrix or not matrix[0]: return False
         for row in matrix:
-            for num in row:
-                if target < num: break
-                if target == num: return True   
+            for col in row:
+                if col == target: return True
+                if target < col: break
         return False

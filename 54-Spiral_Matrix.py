@@ -14,18 +14,15 @@ class Solution(object):
         :rtype: List[int]
         """
         res = []
-        rightTop = True
-        while len(matrix) and len(matrix[0]):
-            if rightTop:
-                res += matrix.pop(0)
-                for row in matrix:
-                    res.append(row.pop())
-                rightTop = False
-            else:
-                temp = matrix.pop()
-                temp.reverse()
-                res += temp
-                for idx, row in enumerate(reversed(matrix)):
-                    res.append(row.pop(0))
-                rightTop = True
-        return res
+        while (True):
+            # Strip top and right elements
+            if not matrix or not matrix[0]: return res
+            res += matrix.pop(0)
+            for row in matrix:
+                res.append(row.pop())
+
+            # Strip bottom and left elements
+            if not matrix or not matrix[0]: return res
+            res += matrix.pop()[::-1]
+            for row in matrix[::-1]:
+                res.append(row.pop(0))

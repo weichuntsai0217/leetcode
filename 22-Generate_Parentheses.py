@@ -14,15 +14,13 @@ class Solution(object):
         :type n: int
         :rtype: List[str]
         """
-        s=''
-        res=[]
-        self.recur(res, n, n, s)
+        def recur(left, right, s, res):
+            if not left and not right:
+                res.append(s)
+            if left:
+                recur(left-1, right, s+'(', res)
+            if left < right:
+                recur(left, right-1, s+')', res)
+        res = []
+        recur(n, n, '', res)
         return res
-    
-    def recur(self, res, left, right, s):
-        if [left, right]==[0, 0]:
-            res.append(s)
-        if left>0:
-            self.recur(res, left-1, right, s+'(')
-        if left<right:
-            self.recur(res, left, right-1, s+')')

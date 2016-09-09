@@ -17,12 +17,14 @@ class Solution(object):
         :type upper: int
         :rtype: List[str]
         """
-        prev, res = lower, []
-        for i in [lower-1]+nums+[upper+1]:
-            # lower-1 and upper+1 are to handle edge case
-            if i - prev > 1:
-                res += [str(prev+1)] if i-prev == 2 else [str(prev+1) + "->" + str(i-1)]
-            prev = i
+        res = []
+        nums = [lower - 1] + nums + [upper+1]
+        length = len(nums)
+        for i in xrange(length):
+            if (i+1 < length) and (nums[i] + 1 < nums[i+1]):
+                start = nums[i] + 1
+                end = nums[i+1] - 1
+                res.append(str(start)+'->'+str(end) if start != end else str(start))
         return res
         
         

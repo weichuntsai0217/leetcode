@@ -16,10 +16,8 @@ class Solution(object):
         :rtype: List[int]
         """
         if not nums: return []
-        res = []
-        for i in xrange(len(nums)-k+1):
-            res.append( max(nums[i:i+k]) )
-        return res
+        length = len(nums)
+        return [ max(nums[i:i+k]) for i in xrange(length-k+1)]
 
 
 # Optimal solution:

@@ -17,9 +17,9 @@ class Solution(object):
         """
         if len(nums) == 0: return []
         if len(nums) == 1: return [str(nums[0])]
-        res, start = [], 0
-        for i in xrange(len(nums)): # i is the end index of every range
-            if (i+1 == len(nums)) or (nums[i+1] - nums[i] > 1):
-                res.append( str(nums[start]) if start == i else str(nums[start]) + '->' + str(nums[i]) )
+        start ,length, res = 0, len(nums), []
+        for i in xrange(length): # i is the end index of every range
+            if (i == length-1) or (nums[i] + 1 < nums[i+1]):
+                res.append(str(nums[start])+'->'+str(nums[i]) if i!=start else str(nums[start]))
                 start = i+1 # don't worry about i == len(nums), when it is this case, the loop is already the final run.
         return res
