@@ -14,30 +14,31 @@
   - Space complexity: O(n)
 """
 class ZigzagIterator(object):
+
     def __init__(self, v1, v2):
         """
         Initialize your data structure here.
         :type v1: List[int]
         :type v2: List[int]
         """
-        self.data = [(len(v), iter(v)) for v in (v1, v2) if v]
+        self.vecs =[ (iter(row), len(row) ) for row in [v1, v2] if len(row) ]
 
     def next(self):
         """
         :rtype: int
         """
-        len, iter = self.data.pop(0)
-        if len > 1:
-            self.data.append((len-1, iter))
-        return iter.next()
+        if self.hasNext():
+            row, n = self.vecs.pop(0)
+            val = next(row)
+            if n - 1 != 0: self.vecs.append((row, n-1))
+            return val
+        return None
 
     def hasNext(self):
         """
         :rtype: bool
         """
-        return bool(self.data)
-        
-        
+        return len(self.vecs) != 0
 
 # Your ZigzagIterator object will be instantiated and called as such:
 # i, v = ZigzagIterator(v1, v2), []
