@@ -21,14 +21,8 @@ class Solution(object):
         :type k: int
         :rtype: List[List[int]]
         """
+        # Note!!!!! lambda u: ([u+v, u, v] for v in nums2) will return list containing generators. However,
+        # lambda u: [[u+v, u, v] for v in nums2] will return list containing lists !!!  Tricky for [] and ()!!!
         streams = map(lambda u: ([u+v, u, v] for v in nums2), nums1)
         stream = heapq.merge(*streams)
         return [suv[1:] for suv in itertools.islice(stream, k)]
-
-
-if __name__ == '__main__':
-    s = Solution()
-    nums1 = [1,7,11]
-    nums2 = [2,4,6]
-    k = 3
-    print s.kSmallestPairs(nums1, nums2, k)

@@ -16,7 +16,7 @@ class Solution:
     def shortestPalindrome(self, s):
         # @param {string} s
         # @return {string}
+        if len(s) <= 1: return s
         r = s[::-1] # reverse the input string s
-        for i in range(len(s) + 1):
-            if s.startswith(r[i:]):
-                return r[:i] + s
+        for i in xrange(len(r)):
+            if s.startswith(r[i:]): return r[:i] + s
