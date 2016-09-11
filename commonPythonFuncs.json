@@ -271,11 +271,77 @@
     "time_complexity": "",
     "space_complexity": "",
   },
-  "re.findall": { ---
+  "re.match": {
+    "note": "
+        確認原本string的開頭(只確認開頭)有無符合pattern的sub-string,
+        若有的話回傳match object, 沒有的話回傳None
+        match object只擁有第一個找到的sub-string的資訊
+        s = '013ab 5566wsx rfv7788'
+        m = re.match( r'(\d+)([a-zA-Z]+)', s)
+        print m.groups() --> ('013', 'ab')
+        print m.group(0) --> '013ab'
+        print m.group(1) --> '013'
+        print m.group(2) --> 'ab'
+
+        若你的pattern內沒有用()分組, 則只有m.group(0)有效:
+        s = '013ab 5566wsx rfv7788'
+        m = re.match( r'\d+[a-zA-Z]+', s)
+        print m.group(0) --> '013ab'
+        print m.group(1) --> Fail
+        print m.group(2) --> Fail
+
+        因為match只確認原本string的開頭有無符合pattern的sub-string, 所以下例會None:
+        s1 = 'rfv7788 013ab 5566wsx '
+        m = re.match( r'(\d+)([a-zA-Z]+)', s1)
+        print m --> None, 因為開頭沒有符合pattern的sub-string
+    "
+  },
+  "re.search": {
+    "note": "
+        和match幾乎一樣, 只是它是尋找原字串的任何一處(不用從開頭), 是否有符合patter的
+        sub-string, 所以
+        s1 = 'rfv7788 013ab 5566wsx '
+        m = re.search( r'(\d+)([a-zA-Z]+)', s1)
+        print m.group(0) --> '013ab', 有找到, 因為search是尋找string的任何一處
+    "
+
+  },
+  "re.findall": {
+    "note": "
+        顧名思義, 找出所有符合pattern的sub-string,
+        回傳的是list, 這個list包含所有找到的sub-string
+
+        有分組的範例:
+        s1 = 'rfv7788 013ab 5566wsx '
+        m = re.findall( r'(\d+)([a-zA-Z]+)', s1)
+        print m --> [('013', 'ab'), ('5566', 'wsx')]
+
+        沒分組的範例:
+        s1 = 'rfv7788 013ab 5566wsx '
+        m = re.findall( r'\d+[a-zA-Z]+', s1)
+        print m --> ['013ab', '5566wsx']
+    ",
     "time_complexity": "",
     "space_complexity": "",
   },
-  "re.sub": { ---
+  "re.sub": {
+    "note": "
+        取代所有符合pattern的子字串
+
+        s = '013ab 5566wsx rfv7788'
+        s = re.sub( r'\d+[a-zA-Z]+', '@@', s)
+        print s --> '@@ @@ rfv7788'
+
+        s = '013ab 5566wsx rfv7788'
+        s = re.sub( r'(\d+)([a-zA-Z]+)', lambda m: m.group(1)[0]+m.group(2)[0], s)
+        print s --> '0a 5w rfv7788',
+                    若想用group的功能, patter內記得要用括號來分群,
+                    每群都是sub-pattern,
+                    group(0)表符合整個pattern的total sub string,
+                    group(1)表符合左邊數來第1個括號內sub-pattern的sub-sting,
+                    group(2)表符合左邊數來第2個括號內sub-pattern的sub-sting,
+                    以此類推
+    ",
     "time_complexity": "",
     "space_complexity": "",
   },
