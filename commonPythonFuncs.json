@@ -189,6 +189,20 @@
     "time_complexity": "",
     "space_complexity": "",
   },
+  "itertools.islice": {
+    "time_complexity": "",
+    "space_complexity": "",
+  },
+  "itertools.groupby": {
+    "note": "
+        可以拿來分組, 實際上是產生每一組的generator
+        src = '223336226'
+        groups = [ ''.join(list(g)) for k, g in itertools.groupby(src)]
+        print group --> ['22', '333', '6', '22', '6']
+    ",
+    "time_complexity": "",
+    "space_complexity": "",
+  },
   "zip": {
     "note": "
         將input的iterable object依序配對, 可以看成是轉置矩陣, 配對完後每一列是tuple
